@@ -109,9 +109,20 @@ public class PLAYER_MOVEMENT : MonoBehaviour
             animator.SetBool("sd", false);
         }
 
-       
-        
-       
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            animator.SetBool("prone", true);
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            animator.SetBool("prone", false);
+        }
+
+
+
+
     }
 }
 
