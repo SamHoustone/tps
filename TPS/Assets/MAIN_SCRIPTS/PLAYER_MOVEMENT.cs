@@ -120,8 +120,17 @@ public class PLAYER_MOVEMENT : MonoBehaviour
             animator.SetBool("prone", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("jump2", true);
+        }
 
+        if (characterController.isGrounded)
+        {
+            animator.SetBool("jump2", false);
+        }
 
+        
 
     }
 }

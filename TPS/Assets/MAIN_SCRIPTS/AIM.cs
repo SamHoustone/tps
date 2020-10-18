@@ -17,6 +17,7 @@ public class AIM : MonoBehaviour
 
     }
 
+
     private void LateUpdate()
     {
         chest.LookAt(Target.position);
