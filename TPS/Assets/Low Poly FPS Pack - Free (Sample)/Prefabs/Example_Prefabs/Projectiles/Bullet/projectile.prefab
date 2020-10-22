@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5a3aa63554ca24b8dc5773dd4ce400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
+  speed: 60
   timeToLive: 5
   damage: 30
   bulletHole: {fileID: 2368660020934508266, guid: f7877a835b54cc44992eca0f2a7a00cf,
