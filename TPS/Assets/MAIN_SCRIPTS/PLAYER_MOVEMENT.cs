@@ -129,8 +129,9 @@ public class PLAYER_MOVEMENT : MonoBehaviour
         {
             animator.SetBool("jump2", false);
         }
-
         
+
+
 
     }
 }
