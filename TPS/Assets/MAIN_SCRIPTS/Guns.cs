@@ -7,6 +7,11 @@ public class Guns : MonoBehaviour
     public float range = 100f;
     public GameObject shootpoint;
 
+    public PLAYER_MOVEMENT playermovement;
+
+    public GameObject cam1;
+    public GameObject cam2;
+
     public float fireRate;
     float intervalBetweenShots;
 
@@ -55,13 +60,19 @@ public class Guns : MonoBehaviour
         IEnumerator Reload()
         {
             isReloading = true;
-
+            cam1.SetActive(true);
+            cam2.SetActive(false);
             animator.SetBool("reload", true);
             yield return new WaitForSeconds(reloadTime);
             animator.SetBool("reload", false);
 
             currentAmmo = maxAmmo;
             isReloading = false;
+            if (Input.GetMouseButton(1) )
+            {
+                cam1.SetActive(false);
+                cam2.SetActive(true);
+            }
 
 
         }

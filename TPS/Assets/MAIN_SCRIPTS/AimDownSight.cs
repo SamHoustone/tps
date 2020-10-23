@@ -12,20 +12,32 @@ public class AimDownSight : MonoBehaviour
     public float aimspeed;
     public Vector3 offset;
 
+    public transform bulletTransform;
+
+    public Guns gun;
+
+    public void Start()
+    {
+        cam1.SetActive(true);
+        cam1.SetActive(false);
+    }
+
 
 
     void FixedUpdate()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             cam1.SetActive (false);
             cam2.SetActive(true);
+            
            
 
             
 
         }
-        else
+        if (Input.GetMouseButtonUp(1))
+
         {
             cam1.SetActive(true);
             cam2.SetActive(false);
