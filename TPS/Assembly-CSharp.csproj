@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\InputController.cs" />
     <Compile Include="Assets\Scripts\InstantiationManager.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Scripts\Casings_&amp;_Projectiles\CasingScript.cs" />
+    <Compile Include="Assets\MAIN_SCRIPTS\transform.cs" />
     <Compile Include="Assets\MAIN_SCRIPTS\AIM.cs" />
     <Compile Include="Assets\Low Poly FPS Pack - Free (Sample)\Components\Demo_Scene_Components\Scripts\DebrisScript.cs" />
     <Compile Include="Assets\Scripts\IK.cs" />
@@ -98,7 +99,6 @@
     <Compile Include="Assets\Scripts\RPS.cs" />
     <Compile Include="Assets\MAIN_SCRIPTS\AimDownSight.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\MAIN_SCRIPTS\transform.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
