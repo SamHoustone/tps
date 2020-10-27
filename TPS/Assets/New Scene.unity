@@ -8912,6 +8912,8 @@ MonoBehaviour:
   gun: {fileID: 365480373}
   controller: {fileID: 1778637194}
   jumpSpeed: 20.09
+  aimdownsight: {fileID: 1985558411}
+  isAiming: 0
 --- !u!114 &1778637198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10177,6 +10179,8 @@ MonoBehaviour:
   hipFire: {x: -0.4, y: 1.59, z: -1.77}
   aimspeed: 10
   offset: {x: 0, y: 0, z: 0}
+  playermovement: {fileID: 0}
+  isAiming: 0
   bulletTransform: {fileID: 0}
   gun: {fileID: 0}
 --- !u!1 &1988052552

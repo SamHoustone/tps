@@ -86,19 +86,7 @@ public class TPScamera : MonoBehaviour
 
 
         //ANIMATION AND MOVEMENT
-        if (Input.GetButtonDown("Fire2"))
-        {
-
-
-
-            animator.SetBool("aim", true);
-        }
-        if (Input.GetButtonUp("Fire2"))
-        {
-
-
-            animator.SetBool("aim", false);
-        }
+        
 
         //crouch
 
