@@ -83,64 +83,6 @@ public class TPScamera : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
 
-
-
-        //ANIMATION AND MOVEMENT
-        
-
-        //crouch
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            animator.SetBool("crouch", true);
-        }
-        if (Input.GetKeyUp(KeyCode.C))
-        {
-            animator.SetBool("crouch", false);
-        }
-
-
-        //backwards
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            animator.SetBool("runback", true);
-
-        }
-        if (Input.GetKeyUp(KeyCode.S))
-        {
-            animator.SetBool("runback", false);
-
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            animator.SetBool("runforward", true);
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            animator.SetBool("runforward", false);
-        }
-
-        if (Input.GetButtonDown("Jump") && characterController.isGrounded)
-        {
-
-            animator.SetBool("jump", true); //jump amnimation
-            moveDirection.y = jumpSpeed;
-
-        }
-        else
-        {
-            moveDirection.y = movementDirectionY;
-        }
-
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
-
-        if (characterController.isGrounded)
-        {
-            animator.SetBool("jump", false);
-        }
     }
 }
 

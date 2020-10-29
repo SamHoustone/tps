@@ -91,9 +91,6 @@ public class PLAYER_MOVEMENT : MonoBehaviour
                 animator.SetBool("jump", true);
 
             }
-
-
-
             if (Input.GetButtonDown("Fire1"))
             {
                 animator.SetBool("is_Shooting", true);
