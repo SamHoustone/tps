@@ -16,6 +16,8 @@ public class PLAYER_MOVEMENT : MonoBehaviour
 
     public bool isAiming = false;
 
+    bool isCrouching = false;
+
 
 
 
@@ -58,10 +60,12 @@ public class PLAYER_MOVEMENT : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 animator.SetBool("crouch", true);
+            isCrouching = !isCrouching;
             }
-            if (Input.GetKeyUp(KeyCode.C))
+            if (Input.GetKeyUp(KeyCode.C) && isCrouching)
             {
                 animator.SetBool("crouch", false);
+            
             }
 
 

@@ -18,7 +18,7 @@ public class Guns : MonoBehaviour
     public ParticleSystem gun_Flash;
 
     [SerializeField] GameObject projectile;
-    [SerializeField] Vector3 aimTargetOffset;
+    public Vector3 aimTargetOffset;
 
     public int maxAmmo = 30;
      public int currentAmmo = -1;
@@ -28,6 +28,8 @@ public class Guns : MonoBehaviour
 
     public Animator animator;
     public GameObject ammo;
+
+    public Recoil recoil;
    
     void Start()
     {   if(currentAmmo == -1)
@@ -79,6 +81,7 @@ public class Guns : MonoBehaviour
 
         void Shoot ()
         {
+            recoil.Fire();
             currentAmmo--;
 
             GameObject go = Instantiate(projectile, shootpoint.transform.position, shootpoint.transform.rotation);
@@ -86,6 +89,7 @@ public class Guns : MonoBehaviour
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
             RaycastHit hit;
             Vector3 targetPosition = ray.GetPoint(500);
+            
 
             if (Physics.Raycast(ray, out hit))
                 targetPosition = hit.point;

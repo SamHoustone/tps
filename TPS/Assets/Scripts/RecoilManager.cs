@@ -15,7 +15,7 @@ public class RecoilManager : MonoBehaviour
     [SerializeField] float recoilSpeed;
     [SerializeField] float recoilCooldown;
     [SerializeField] float strength;
-    [SerializeField] Shooter shooter;
+    public Guns guns;
     [SerializeField] Crosshair crosshair;
 
     float nextRecoilCooldown;
@@ -37,7 +37,7 @@ public class RecoilManager : MonoBehaviour
             for (int i = 0; i < layers.Length; i++)
                 recoilAmount += layers[i].direction * layers[i].curve.Evaluate(percentage);
 
-            shooter.aimTargetOffset = Vector3.Lerp(shooter.aimTargetOffset, shooter.aimTargetOffset + recoilAmount, strength * Time.deltaTime);
+            guns.aimTargetOffset = Vector3.Lerp(guns.aimTargetOffset, guns.aimTargetOffset + recoilAmount, strength * Time.deltaTime);
             crosshair.ApplyScale(percentage * Random.Range(strength * 7, strength * 9));
         }
         else
@@ -50,7 +50,7 @@ public class RecoilManager : MonoBehaviour
 
             if (recoilActiveTime == 0)
             {
-                shooter.aimTargetOffset = Vector3.zero;
+                guns.aimTargetOffset = Vector3.zero;
                 crosshair.ApplyScale(0);
             }
         }
