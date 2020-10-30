@@ -7,7 +7,7 @@ public class Guns : MonoBehaviour
     public float range = 100f;
     public GameObject shootpoint;
 
-    public PLAYER_MOVEMENT playermovement;
+    public InputManager inputManager;
 
     public GameObject cam1;
     public GameObject cam2;

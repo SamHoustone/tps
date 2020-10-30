@@ -12,7 +12,7 @@ public class AimDownSight : MonoBehaviour
     public float aimspeed;
     public Vector3 offset;
 
-    public PLAYER_MOVEMENT playermovement;
+    InputManager inputManager;
 
 
     public bool isAiming = false;
