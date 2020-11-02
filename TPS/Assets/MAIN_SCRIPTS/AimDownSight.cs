@@ -11,15 +11,9 @@ public class AimDownSight : MonoBehaviour
     public Vector3 hipFire;
     public float aimspeed;
     public Vector3 offset;
-
     InputManager inputManager;
-
-
     public bool isAiming = false;
-
-    public transform bulletTransform;
-
-    public Guns gun;
+    public Canvas crosshair;
 
     public void Start()
     {
@@ -36,17 +30,19 @@ public class AimDownSight : MonoBehaviour
         
             if (Input.GetMouseButtonDown(1))
             {
-                cam1.SetActive(false);
+                cam1.GetComponent<Camera>().enabled = false;
+                crosshair.enabled = false;
                 cam2.SetActive(true);
-            isAiming = !isAiming;
+                isAiming = !isAiming;
 
             
 
             }
             if (isAiming && Input.GetMouseButtonDown(1))
             {
-                cam1.SetActive(true);
-                cam2.SetActive(false);
+             cam1.GetComponent<Camera>().enabled = true;
+             crosshair.enabled = true;
+             cam2.SetActive(false);
 
             
 

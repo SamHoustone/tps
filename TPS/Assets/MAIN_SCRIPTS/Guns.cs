@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-public class Guns : MonoBehaviour
+public class Guns : MonoBehaviour 
 {
     public float damage = 10f;
     public float range = 100f;
@@ -23,6 +23,8 @@ public class Guns : MonoBehaviour
     public int maxAmmo = 30;
      public int currentAmmo = -1;
 
+    public AimDownSight aimDownSight;
+
     public float reloadTime;
     public bool isReloading = false;
 
@@ -30,6 +32,7 @@ public class Guns : MonoBehaviour
     public GameObject ammo;
 
     public Recoil recoil;
+    public Recoil aimRecoil;
    
     void Start()
     {   if(currentAmmo == -1)
@@ -62,26 +65,30 @@ public class Guns : MonoBehaviour
         IEnumerator Reload()
         {
             isReloading = true;
-            cam1.SetActive(true);
+
+            aimDownSight.cam1.GetComponent<Camera>().enabled = true;
             cam2.SetActive(false);
             animator.SetBool("reload", true);
+            aimDownSight.cam1.GetComponent<Camera>().enabled = true;
             yield return new WaitForSeconds(reloadTime);
             animator.SetBool("reload", false);
+            aimDownSight.crosshair.enabled = true;
+
 
             currentAmmo = maxAmmo;
             isReloading = false;
-            if (Input.GetMouseButton(1) )
+
+            if (Input.GetMouseButtonDown(1))
             {
-                cam1.SetActive(false);
+                aimDownSight.cam1.GetComponent<Camera>().enabled = false;
                 cam2.SetActive(true);
             }
-
-
         }
 
         void Shoot ()
         {
-            recoil.Fire();
+            recoil.HipRecoil();
+            
             currentAmmo--;
 
             GameObject go = Instantiate(projectile, shootpoint.transform.position, shootpoint.transform.rotation);

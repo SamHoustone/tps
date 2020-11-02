@@ -2026,11 +2026,13 @@ MonoBehaviour:
   aimTargetOffset: {x: 0, y: 0, z: 0}
   maxAmmo: 30
   currentAmmo: -1
+  aimDownSight: {fileID: 0}
   reloadTime: 0
   isReloading: 0
   animator: {fileID: 0}
   ammo: {fileID: 0}
   recoil: {fileID: 0}
+  aimRecoil: {fileID: 0}
 --- !u!114 &335116349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4631,7 +4633,6 @@ GameObject:
   - component: {fileID: 917856863}
   - component: {fileID: 917856861}
   - component: {fileID: 917856862}
-  - component: {fileID: 917856864}
   m_Layer: 14
   m_Name: Camera
   m_TagString: Untagged
@@ -4705,36 +4706,6 @@ Transform:
   m_Father: {fileID: 1036210296}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -43.98, z: 0}
---- !u!114 &917856864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917856860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7ba08d55b6f4bf4e83c8f41ea5e0095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RecoilPositionTranform: {fileID: 1884499091}
-  RecoilRotationTranform: {fileID: 1036210296}
-  PositionDampTime: 4
-  RotationDampTime: 5
-  Recoil1: 35
-  Recoil2: 50
-  Recoil3: 35
-  Recoil4: 80
-  RecoilRotation: {x: -90, y: 70, z: 0}
-  RecoilKickBack: {x: 0.2, y: 0.2, z: 0.2}
-  RecoilRotation_Aim: {x: 3.43, y: 0, z: 0}
-  RecoilKickBack_Aim: {x: 0, y: 0, z: 0}
-  CurrentRecoil1: {x: 0, y: 0, z: 0}
-  CurrentRecoil2: {x: 0, y: 0, z: 0}
-  CurrentRecoil3: {x: 0, y: 0, z: 0}
-  CurrentRecoil4: {x: 0, y: 0, z: 0}
-  RotationOutput: {x: 0, y: 0, z: 0}
-  aim: 0
 --- !u!1 &918716158
 GameObject:
   m_ObjectHideFlags: 0
@@ -9718,11 +9689,13 @@ MonoBehaviour:
   aimTargetOffset: {x: 0, y: 0, z: 0}
   maxAmmo: 30
   currentAmmo: -1
+  aimDownSight: {fileID: 1985558411}
   reloadTime: 3
   isReloading: 0
   animator: {fileID: 1778637195}
   ammo: {fileID: 193007496}
-  recoil: {fileID: 917856864}
+  recoil: {fileID: 1379744631}
+  aimRecoil: {fileID: 0}
 --- !u!114 &1856034317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10383,8 +10356,7 @@ MonoBehaviour:
   aimspeed: 10
   offset: {x: 0, y: 0, z: 0}
   isAiming: 0
-  bulletTransform: {fileID: 0}
-  gun: {fileID: 0}
+  crosshair: {fileID: 161981395}
 --- !u!1 &1988052552
 GameObject:
   m_ObjectHideFlags: 0
